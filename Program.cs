@@ -11,7 +11,10 @@ namespace ForCourse
  
             static void Main(string[] args)
             {
-                double a, b, c, d, r;         // input side of the cube and window          
+            double a, b, c, d, r;// input side of the cube and window 
+            try
+            {
+
                 Console.WriteLine("Please write a 1 side of the cube");
                 a = double.Parse(Console.ReadLine());
                 Console.WriteLine("Please write a 2 side of the cube");
@@ -22,6 +25,8 @@ namespace ForCourse
                 d = double.Parse(Console.ReadLine());
                 Console.WriteLine("Please write a 2 side of the cube");
                 r = double.Parse(Console.ReadLine());
+
+
                 if (IsNotNegative(a, b, c, d, r))// realization
                 {
                     if ((Check(a, d, r) && Check(b, d, r)) || (Check(b, d, r) && Check(c, d, r)) || (Check(a, d, r) && Check(a, d, r)))
@@ -40,5 +45,8 @@ namespace ForCourse
                 }
                 Console.ReadKey();
             }
+            catch (Exception e) { Console.WriteLine(e);  Console.ReadKey(); }
+
+        }
         }
     }
